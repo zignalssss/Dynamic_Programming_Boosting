@@ -17,7 +17,7 @@ int solve_memoization(int n){
 	if(dp[n] != 0)
 		return dp[n];
 		
-	return dp[n] = solve(n-1) + solve(n-3) + solve(n-4);
+	return dp[n] = solve_memoizatio(n-1) + solve_memoizatio(n-3) + solve_memoizatio(n-4);
 }
 int solve_tabulation(int n){
 	d[0] = 1;
