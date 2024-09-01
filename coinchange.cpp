@@ -4,35 +4,9 @@
 #include <vector>
 using namespace std;
 vector<int> init_vector(){
-    vector<int> c;
-    c.push_back(1);
-    c.push_back(5);
-    c.push_back(10);
-    c.push_back(25);
-    c.push_back(50);
+    vector<int> c = {1,5,10,25,50};
     return c;
 }
-void debugprint(int c int arr[][6]){
-    for(int i = 0 ; i <= c; i++){
-	    for(int j = 0; j <= 5;j++ ){
-	        cout << arr[i][j] << " ";
-	    }
-	     cout << endl;
- 	}
-}
-// int dp_slove_coinchange(int arr[][6] ,int i,int j){
-//     vector<int> v = init_vector();
-//     cout << i << " " << j << endl;
-//     if( i < 0)
-//         return 0;
-//     if( i == 1  || j == 1 || i == 0)
-//         return 1;
-
-//     if(arr[i][j] == 0){
-//         arr[i][j] = dp_slove_coinchange(arr,i,j-1) + dp_slove_coinchange(arr,i-v[j],j);
-//     }
-//     return arr[i][j];
-// }
 int tabulation_dp_slove_coinchange(int arr[][6],int i,int j){
     vector<int> v = init_vector();
     // vector<int> arr [i];
@@ -55,6 +29,13 @@ int tabulation_dp_slove_coinchange(int arr[][6],int i,int j){
             }
         }
     }
+    // for(int x = 0 ; x <= i; x++){
+    //     cout  << x << " : ";
+    //     for(int y = 0; y <= 5;y++ ){
+    //         cout << arr[x][y] << " ";
+    //     }
+    //     cout << endl;
+    // }
     return arr[i][j];
 }
 int main(){
@@ -71,6 +52,12 @@ int main(){
                 arr[i][j] = 0;
             }
         }
+        // for(int i = 0 ; i <= c; i++){
+        //     for(int j = 0; j <= 5;j++ ){
+        //         cout << arr[i][j] << " ";
+        //     }
+        //     cout << endl;
+        // }
         int witee = tabulation_dp_slove_coinchange(arr,c,5);
         cout << witee << endl;
     }
