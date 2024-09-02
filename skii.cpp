@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int maxScore(const vector<int>& heights, const vector<int>& scores, int K) {
+int maxScore(vector<int> heights, vector<int> scores, int K) {
     int N = heights.size();
     vector<int> dp(N, 0);
     dp[0] = scores[0];
